@@ -11,7 +11,14 @@ fun main() {
 
 // Función que debe desarrollar la lógica para la solución del problema
 fun problema5() {
-    // Desarrolle aquí la lógica
+    /*
+        Input:
+            e:      Int, Número de estudiantes
+            m:      Int, Número de manzanas
+        Output:
+            m/e:    Int, manzanas que recibe cada estudiante
+            m%e:    Int, manzanas que quedan en el resto
+     */
     println("e:")
     val e = readln().toInt()
     println("m:")
