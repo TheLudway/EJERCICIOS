@@ -9,8 +9,7 @@ import java.io.ByteArrayOutputStream
 import java.io.InputStream
 import java.io.PrintStream
 
-class Problema3KtTest {
-
+class Problema12KtTest {
     private val originalIn: InputStream = System.`in`
     private val originalOut: PrintStream = System.out
     private lateinit var outContent: ByteArrayOutputStream
@@ -18,7 +17,7 @@ class Problema3KtTest {
     @Before
     fun setUpStreams() {
         // Simulamos las entradas del usuario
-        val simulatedInput = "matemáticas\n2.5\n2.5\n2.5\nprogramación\n3.1\n2.8\n4.3\n"
+        val simulatedInput = "10\n5\n10\n17\n17\n-9\n4\n-82\n-82\n5\n2\n4\n-142\n-149\n-146\n999\n999\n999\n"
         System.setIn(ByteArrayInputStream(simulatedInput.toByteArray()))
 
         // Capturamos las salidas del sistema
@@ -34,18 +33,22 @@ class Problema3KtTest {
     }
 
     @Test
-    fun problema3_esCorrecto() {
+    fun problema12_esCorrecto() {
         // Ejecutamos la función
-        repeat(2) {
-            problema3()
+        repeat(6) {
+            problema12()
         }
         val ls = System.lineSeparator()
         // Verificamos las salidas
-        val caso1 = "Ingresa la asignatura:"+ls+"Ingresa nota primer corte:"+ls+"Ingresa nota segundo corte:"+ls+"Ingresa nota tercer corte:"+ls+"Asignatura: matemáticas"+ls+"Definitiva: 2.5"+ls
-        val caso2 = "Ingresa la asignatura:"+ls+"Ingresa nota primer corte:"+ls+"Ingresa nota segundo corte:"+ls+"Ingresa nota tercer corte:"+ls+"Asignatura: programación"+ls+"Definitiva: 3.4009"+ls
-        val expectedOutput = caso1 + caso2
+        val caso1 = "Dame num1:"+ls+"Dame num2:"+ls+"Dame num3:"+ls+"2"+ls
+        val caso2 = "Dame num1:"+ls+"Dame num2:"+ls+"Dame num3:"+ls+"2"+ls
+        val caso3 = "Dame num1:"+ls+"Dame num2:"+ls+"Dame num3:"+ls+"2"+ls
+        val caso4 = "Dame num1:"+ls+"Dame num2:"+ls+"Dame num3:"+ls+"0"+ls
+        val caso5 = "Dame num1:"+ls+"Dame num2:"+ls+"Dame num3:"+ls+"0"+ls
+        val caso6 = "Dame num1:"+ls+"Dame num2:"+ls+"Dame num3:"+ls+"3"+ls
+
+        val expectedOutput = caso1 + caso2 + caso3 + caso4 + caso5 + caso6
 
         assertEquals(expectedOutput, outContent.toString())
     }
-
 }

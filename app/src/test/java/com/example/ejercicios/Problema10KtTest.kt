@@ -1,5 +1,6 @@
 package com.example.ejercicios
 
+
 import org.junit.After
 import org.junit.Test
 import org.junit.Assert.*
@@ -9,8 +10,7 @@ import java.io.ByteArrayOutputStream
 import java.io.InputStream
 import java.io.PrintStream
 
-class Problema3KtTest {
-
+class Problema10KtTest {
     private val originalIn: InputStream = System.`in`
     private val originalOut: PrintStream = System.out
     private lateinit var outContent: ByteArrayOutputStream
@@ -18,7 +18,7 @@ class Problema3KtTest {
     @Before
     fun setUpStreams() {
         // Simulamos las entradas del usuario
-        val simulatedInput = "matemáticas\n2.5\n2.5\n2.5\nprogramación\n3.1\n2.8\n4.3\n"
+        val simulatedInput = "10\n100\n23\n-10\n-5\n"
         System.setIn(ByteArrayInputStream(simulatedInput.toByteArray()))
 
         // Capturamos las salidas del sistema
@@ -34,18 +34,21 @@ class Problema3KtTest {
     }
 
     @Test
-    fun problema3_esCorrecto() {
+    fun problema10_esCorrecto() {
         // Ejecutamos la función
-        repeat(2) {
-            problema3()
+        repeat(5) {
+            problema10()
         }
         val ls = System.lineSeparator()
         // Verificamos las salidas
-        val caso1 = "Ingresa la asignatura:"+ls+"Ingresa nota primer corte:"+ls+"Ingresa nota segundo corte:"+ls+"Ingresa nota tercer corte:"+ls+"Asignatura: matemáticas"+ls+"Definitiva: 2.5"+ls
-        val caso2 = "Ingresa la asignatura:"+ls+"Ingresa nota primer corte:"+ls+"Ingresa nota segundo corte:"+ls+"Ingresa nota tercer corte:"+ls+"Asignatura: programación"+ls+"Definitiva: 3.4009"+ls
-        val expectedOutput = caso1 + caso2
+        val caso1 = "Dame num:"+ls+"Divisible."+ls
+        val caso2 = "Dame num:"+ls+"Divisible."+ls
+        val caso3 = "Dame num:"+ls+"No divisible."+ls
+        val caso4 = "Dame num:"+ls+"Divisible."+ls
+        val caso5 = "Dame num:"+ls+"No divisible."+ls
+
+        val expectedOutput = caso1 + caso2 + caso3 + caso4 + caso5
 
         assertEquals(expectedOutput, outContent.toString())
     }
-
 }
