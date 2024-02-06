@@ -9,7 +9,7 @@ import java.io.ByteArrayOutputStream
 import java.io.InputStream
 import java.io.PrintStream
 
-class Problema3KtTest {
+class Problema8KtTest {
 
     private val originalIn: InputStream = System.`in`
     private val originalOut: PrintStream = System.out
@@ -18,7 +18,7 @@ class Problema3KtTest {
     @Before
     fun setUpStreams() {
         // Simulamos las entradas del usuario
-        val simulatedInput = "matemáticas\n2.5\n2.5\n2.5\nprogramación\n3.1\n2.8\n4.3\n"
+        val simulatedInput = "2\n3\n10\n10\n-5\n4\n"
         System.setIn(ByteArrayInputStream(simulatedInput.toByteArray()))
 
         // Capturamos las salidas del sistema
@@ -34,18 +34,19 @@ class Problema3KtTest {
     }
 
     @Test
-    fun problema3_esCorrecto() {
+    fun problema8_esCorrecto() {
         // Ejecutamos la función
-        repeat(2) {
-            problema3()
+        repeat(3) {
+            problema8()
         }
         val ls = System.lineSeparator()
         // Verificamos las salidas
-        val caso1 = "Ingresa la asignatura:"+ls+"Ingresa nota primer corte:"+ls+"Ingresa nota segundo corte:"+ls+"Ingresa nota tercer corte:"+ls+"Asignatura: matemáticas"+ls+"Definitiva: 2.5"+ls
-        val caso2 = "Ingresa la asignatura:"+ls+"Ingresa nota primer corte:"+ls+"Ingresa nota segundo corte:"+ls+"Ingresa nota tercer corte:"+ls+"Asignatura: programación"+ls+"Definitiva: 3.4009"+ls
-        val expectedOutput = caso1 + caso2
+        val caso1 = "Dame la base:"+ls+"Dame el exponente:"+ls+"Números óptimos."+ls
+        val caso2 = "Dame la base:"+ls+"Dame el exponente:"+ls+"Muy grande."+ls
+        val caso3 = "Dame la base:"+ls+"Dame el exponente:"+ls+"Números óptimos."+ls
+
+        val expectedOutput = caso1 + caso2 + caso3
 
         assertEquals(expectedOutput, outContent.toString())
     }
-
 }

@@ -39,7 +39,7 @@ fun problema3() {
 
     // Se múltiplica por 1000 para luego ser redondeado al entero más cercano y luego
     // dividir entre 1000 para que la salida sea un flotante
-    var definitiva = round((c1*0.333 + c2*0.333 + c3*0.334) * 1000) / 1000
+    var definitiva = round((c1*0.333 + c2*0.333 + c3*0.334)*10000) / 10000
 
-    println("Definitiva: $definitiva")
+    println("Definitiva: ${definitiva}")
 }

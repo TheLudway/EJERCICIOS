@@ -1,5 +1,6 @@
 package com.example.ejercicios
 
+
 import org.junit.After
 import org.junit.Test
 import org.junit.Assert.*
@@ -9,8 +10,7 @@ import java.io.ByteArrayOutputStream
 import java.io.InputStream
 import java.io.PrintStream
 
-class Problema3KtTest {
-
+class Problema13KtTest {
     private val originalIn: InputStream = System.`in`
     private val originalOut: PrintStream = System.out
     private lateinit var outContent: ByteArrayOutputStream
@@ -18,7 +18,7 @@ class Problema3KtTest {
     @Before
     fun setUpStreams() {
         // Simulamos las entradas del usuario
-        val simulatedInput = "matemáticas\n2.5\n2.5\n2.5\nprogramación\n3.1\n2.8\n4.3\n"
+        val simulatedInput = "123\n321\n112\n211\n121\n"
         System.setIn(ByteArrayInputStream(simulatedInput.toByteArray()))
 
         // Capturamos las salidas del sistema
@@ -34,18 +34,21 @@ class Problema3KtTest {
     }
 
     @Test
-    fun problema3_esCorrecto() {
+    fun problema13_esCorrecto() {
         // Ejecutamos la función
-        repeat(2) {
-            problema3()
+        repeat(5) {
+            problema13()
         }
         val ls = System.lineSeparator()
         // Verificamos las salidas
-        val caso1 = "Ingresa la asignatura:"+ls+"Ingresa nota primer corte:"+ls+"Ingresa nota segundo corte:"+ls+"Ingresa nota tercer corte:"+ls+"Asignatura: matemáticas"+ls+"Definitiva: 2.5"+ls
-        val caso2 = "Ingresa la asignatura:"+ls+"Ingresa nota primer corte:"+ls+"Ingresa nota segundo corte:"+ls+"Ingresa nota tercer corte:"+ls+"Asignatura: programación"+ls+"Definitiva: 3.4009"+ls
-        val expectedOutput = caso1 + caso2
+        val caso1 = "Dame un numero:"+ls+"SÍ"+ls
+        val caso2 = "Dame un numero:"+ls+"NO"+ls
+        val caso3 = "Dame un numero:"+ls+"NO"+ls
+        val caso4 = "Dame un numero:"+ls+"NO"+ls
+        val caso5 = "Dame un numero:"+ls+"NO"+ls
+
+        val expectedOutput = caso1 + caso2 + caso3 + caso4 + caso5
 
         assertEquals(expectedOutput, outContent.toString())
     }
-
 }

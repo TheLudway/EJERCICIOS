@@ -1,5 +1,6 @@
 package com.example.ejercicios
 
+
 import org.junit.After
 import org.junit.Test
 import org.junit.Assert.*
@@ -9,8 +10,7 @@ import java.io.ByteArrayOutputStream
 import java.io.InputStream
 import java.io.PrintStream
 
-class Problema3KtTest {
-
+class Problema11KtTest {
     private val originalIn: InputStream = System.`in`
     private val originalOut: PrintStream = System.out
     private lateinit var outContent: ByteArrayOutputStream
@@ -18,7 +18,7 @@ class Problema3KtTest {
     @Before
     fun setUpStreams() {
         // Simulamos las entradas del usuario
-        val simulatedInput = "matemáticas\n2.5\n2.5\n2.5\nprogramación\n3.1\n2.8\n4.3\n"
+        val simulatedInput = "100\n20\n10\n5\n50\n1000\n200\n100\n200\n600\n"
         System.setIn(ByteArrayInputStream(simulatedInput.toByteArray()))
 
         // Capturamos las salidas del sistema
@@ -34,18 +34,18 @@ class Problema3KtTest {
     }
 
     @Test
-    fun problema3_esCorrecto() {
+    fun problema11_esCorrecto() {
         // Ejecutamos la función
         repeat(2) {
-            problema3()
+            problema11()
         }
         val ls = System.lineSeparator()
         // Verificamos las salidas
-        val caso1 = "Ingresa la asignatura:"+ls+"Ingresa nota primer corte:"+ls+"Ingresa nota segundo corte:"+ls+"Ingresa nota tercer corte:"+ls+"Asignatura: matemáticas"+ls+"Definitiva: 2.5"+ls
-        val caso2 = "Ingresa la asignatura:"+ls+"Ingresa nota primer corte:"+ls+"Ingresa nota segundo corte:"+ls+"Ingresa nota tercer corte:"+ls+"Asignatura: programación"+ls+"Definitiva: 3.4009"+ls
+        val caso1 = "Dame el presupuesto:"+ls+"Dame el valor de la comida:"+ls+"Dame el valor de la electricidad:"+ls+"Dame el valor del internet:"+ls+"Dame el valor del arriendo:"+ls+"Vamos melos!"+ls
+        val caso2 = "Dame el presupuesto:"+ls+"Dame el valor de la comida:"+ls+"Dame el valor de la electricidad:"+ls+"Dame el valor del internet:"+ls+"Dame el valor del arriendo:"+ls+"Rayos estoy quebrado(a)!"+ls
+
         val expectedOutput = caso1 + caso2
 
         assertEquals(expectedOutput, outContent.toString())
     }
-
 }
