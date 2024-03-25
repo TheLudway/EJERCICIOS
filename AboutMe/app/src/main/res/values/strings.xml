@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">About Me</string>
+    <string name="name">Ludwig Alvarado</string>
+    <string name="yellow_star">Yellow star</string>
+    <string name="bio"> Hola, mí nombre es Ludwig.
+    \n\nMe gusta la muisiquita.
+    \n\nY más cosas como las mates. Los computers.
+    \n\nNo sé qué más poner aquí.
+    \n\nBueno, que soy estudiante y probablemente adquiera esquizofrenia después
+    \n\nde la carrera, es como el señor este que hizo TempleOS, que era buenísimo
+    \n\nprogramando pero que también era re loco mentalmente y acabó todo mal.
+    \n\nPues bueno, así pienso terminar si no termino así de esquizofrenico
+    \n\ncomo ese señor, entonces no seré yo, mientras tanto, sí seré yo.
+    \n\nHay un problema, tengo que colocar más cosas, voy a colocar un verso
+    de un parrafo de una canción de Dylan.
+    \n\nOh, but if I had the stars from the darkest night
+    \n\nAnd the diamonds from the deepest ocean
+    \n\nI\'d forsake them all for your sweet kiss
+    \n\nFor that\'s all I\'m wishin\' to be ownin\'
+    \n\n\nThat I might be gone for a long time
+    \n\nAnd it\'s only that I\'m askin\'
+    \n\nIs there something I can send you to remember me by
+    \n\nto make your time more easy passin\'</string>
+    <string name="what_is_your_nickname">What is your Nickname?</string>
+    <string name="done">Done</string>
+</resources>
