@@ -6,25 +6,50 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
+import androidx.core.widget.addTextChangedListener
 import androidx.navigation.fragment.findNavController
+import android.util.Log
 import com.example.navigationcomponentexample.R
+import com.example.navigationcomponentexample.databinding.ActivityMainBinding
+import com.example.navigationcomponentexample.databinding.FragmentFirstBinding
 
 
 class First : Fragment() {
 
+    private lateinit var binding: FragmentFirstBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root: View = inflater.inflate(R.layout.fragment_first, container, false)
 
-        val btnNavigate = root.findViewById<Button>(R.id.btnNavigate)
+        binding = FragmentFirstBinding.inflate(layoutInflater, container, false)
+
+        initUI()
+
+
+        val btnNavigate = binding.btnNavigate
 
         btnNavigate.setOnClickListener {
-            findNavController().navigate(R.id.action_first_to_secondFragment)
+            findNavController().navigate(FirstDirections.actionFirstToSecondFragment(
+                ))
         }
 
-        return root
+        return binding.root
+    }
+
+    private fun initUI() {
+        binding.btnNavigate.setOnClickListener {
+
+        }
+
+        binding.editTextUser.setOnClickListener {
+
+        }
+
+        binding.editTextPassword.setOnClickListener {
+
+        }
     }
 
 }
